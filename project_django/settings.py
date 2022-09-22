@@ -41,11 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'example_app',
     'katalog',
-<<<<<<< HEAD
     'myWatchList',
     
-=======
->>>>>>> 7b5ce07f363078ae21f5a3722aab1d46d78b3647
 ]
 
 MIDDLEWARE = [

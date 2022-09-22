@@ -20,10 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('katalog/', include('katalog.urls')),
     path('', include('example_app.urls')),
-<<<<<<< HEAD
-    path('myWatchList/', include('myWatchList.urls')),
-=======
->>>>>>> 7b5ce07f363078ae21f5a3722aab1d46d78b3647
+    path('mywatchlist/', include('myWatchList.urls')),
 ]
 
 # TODO: Implement Routings Here
