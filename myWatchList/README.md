@@ -1,9 +1,9 @@
 # Template Proyek Django PBP
 
 Link aplikasi heroku(https://bynpbp.herokuapp.com/mywatchlist/html/)
-![HTML](https://github.com/IbniShaquille/tugas2PBP/blob/main/assets/HTML.png)
-![JSON](https://github.com/IbniShaquille/tugas2PBP/blob/main/assets/JSON.png)
-![XML](https://github.com/IbniShaquille/tugas2PBP/blob/main/assets/XML.png)
+![HTML](https://github.com/IbniShaquille/tugas2PBP/blob/main/assets/HTML.jpg)
+![JSON](https://github.com/IbniShaquille/tugas2PBP/blob/main/assets/JSON.jpg)
+![XML](https://github.com/IbniShaquille/tugas2PBP/blob/main/assets/XML.jpg)
 
 ## JSON vs XML vs HTML
 
