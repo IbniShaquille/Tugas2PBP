@@ -1,0 +1,112 @@
+[
+    {
+        "model": "myWatchList.mywatchlistitem",
+        "pk": 1,
+        "fields": {
+            "watched": true,
+            "title": "The Godfather",
+            "rating": 4.2,
+            "release_date": "1972-03-14",
+            "review": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
+        }
+    },
+    {
+        "model": "myWatchList.mywatchlistitem",
+        "pk": 2,
+        "fields": {
+            "watched": true,
+            "title": "The Shawshank Redemption",
+            "rating": 4.3,
+            "release_date": "1994-09-23",
+            "review": "Two imprisoned"
+        }
+    },
+    {
+        "model": "myWatchList.mywatchlistitem",
+        "pk": 3,
+        "fields": {
+            "watched": true,
+            "title": "The Dark Knight",
+            "rating": 4.0,
+            "release_date": "2008-07-18",
+            "review": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice."
+        }
+    },
+    {
+        "model": "myWatchList.mywatchlistitem",
+        "pk": 4,
+        "fields": {
+            "watched": true,
+            "title": "The Godfather: Part II",
+            "rating": 4.0,
+            "release_date": "1974-12-20",
+            "review": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate."
+        }
+    },
+    {
+        "model": "myWatchList.mywatchlistitem",
+        "pk": 5,
+        "fields": {
+            "watched": true,
+            "title": "The Lord of the Rings: The Return of the King",
+            "rating": 3.9,
+            "release_date": "2003-12-01",
+            "review": "Gandalf and Aragorn lead the World"
+        }
+    },
+    {
+        "model": "myWatchList.mywatchlistitem",
+        "pk": 6,
+        "fields": {
+            "watched": true,
+            "title": "Pulp Fiction",
+            "rating": 3.9,
+            "release_date": "1994-10-14",
+            "review": "The lives of two mob hitmen, a boxer, a gangster"
+        }
+    },
+    {
+        "model": "myWatchList.mywatchlistitem",
+        "pk": 7,
+        "fields": {
+            "watched": true,
+            "title": "The Good, the Bad and the Ugly",
+            "rating": 4.9,
+            "release_date": "1966-12-23",
+            "review": "A bounty hunting scam joins two"
+        }
+    },
+    {
+        "model": "myWatchList.mywatchlistitem",
+        "pk": 8,
+        "fields": {
+            "watched": true,
+            "title": "The Lord of the Rings: The Fellowship of the Ring",
+            "rating": 3.8,
+            "release_date": "2001-12-18",
+            "review": "A meek Hobbit from the Shire and eight companions set out on a journey to Mount Doom to destroy the One Ring and the dark lord Sauron."
+        }
+    },
+    {
+        "model": "myWatchList.mywatchlistitem",
+        "pk": 9,
+        "fields": {
+            "watched": true,
+            "title": "Fight Club",
+            "rating": 3.8,
+            "release_date": "1999-10-15",
+            "review": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more."
+        }
+    },
+    {
+        "model": "myWatchList.mywatchlistitem",
+        "pk": 10,
+        "fields": {
+            "watched": true,
+            "title": "Star Wars: Episode V - The Empire Strikes Back",
+            "rating": 3.8,
+            "release_date": "1980-05-17",
+            "review": "After the rebels are overpowered by the Empire on their newly established base, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader as part of his plan to capture Luke."
+        }
+    }
+]
