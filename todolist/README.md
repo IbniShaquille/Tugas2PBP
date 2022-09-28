@@ -1,20 +1,30 @@
 # Template Proyek Django PBP
 
-Link aplikasi heroku(https://bynpbp.herokuapp.com/mywatchlist/html/)
-![HTML](https://github.com/IbniShaquille/tugas2PBP/blob/main/assets/HTML.jpg)
-![JSON](https://github.com/IbniShaquille/tugas2PBP/blob/main/assets/JSON.jpg)
-![XML](https://github.com/IbniShaquille/tugas2PBP/blob/main/assets/XML.jpg)
+Link aplikasi heroku(https://bynpbp.herokuapp.com/todolist/html/)
 
-## JSON vs XML vs HTML
+## fungsi csrf_token
 
-JSON atau JavaScript object notation adalah format yang digunakan untuk menyimpan atau mentransfer data. JSON merupakan turunan javascript. JSON lebih mudah dipahami dan dibaca karena struktur bentuknya yang berupa key and value.
-XML atau Extensible Markup Language merupakan bahasa markah yang dibuat untuk menyimpan dan mentransfer data. XML lebih kompleks dibandingkan JSON karena XML memiliki struktur yang lebih kompleks. XML memiliki tag-tag yang berbeda-beda sehingga lebih kompleks dibandingkan JSON.
-HTML atau Hypertext Markup Language merupakan bahasa markah yang digunakan untuk membuat halaman web. HTML memiliki struktur yang lebih sederhana dibandingkan JSON dan XML. HTML memiliki tag-tag yang berbeda-beda sehingga lebih kompleks dibandingkan JSON dan XML. selain itu, HTML merupakan bahasa markah yang digunakan untuk membuat halaman web. 
+csrf_token adalah sebuah fungsi yang digunakan untuk mengamankan sebuah form agar tidak bisa diakses oleh orang lain. csrf_token akan menghasilkan sebuah token yang akan dijadikan sebuah hidden input pada form. Token tersebut akan di cek oleh django apakah token tersebut sesuai dengan token yang ada pada session. Jika token tersebut tidak sesuai maka akan muncul error 403.
 
-## Jelaskan mengapa kita memerlukan data delivery dalam pengimplementasian sebuah platform?
+## dapatkah membuat form menggunakan <form> tanpa generator form?
 
-kita memerlukan data delivery dalam mengimplementasi sebuah platform karena dalam sebuah platform kita memerlukan dan mengirimkan data. oleh karena itu data delivery sangat diperlukan dalam pembentukan sebuah platform. selain itu, dengan data delivery dapat membuat sebuah platform kita lebih dinamis karena tidak perlu membuat sebuah platform lagi ketika ingin mengubah data.
+Dapat, dengan cara membuat form secara manual. dengan cara membuat form secara manual kita harus membuat input untuk setiap field yang ada pada model. Jika kita menggunakan generator form maka kita hanya perlu membuat form dengan memanggil fungsi form.
 
-## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+## proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
 
-untuk membuat app mywatchlist, saya membuat mywatchlist seperti membuat katalog kemarin. lalu, menambahkan path juga seperti tugas kemarin. lalu, model yang diperlukan saya masukkan ke views.py dan disesuaikan dengan atribut-atribut yang diminta. lalu untuk menambahkan 10 data, saya menggunakan data-data film yang ada. untuk implementasi HTML, XML, dan JSON dengan mengimport HttpResponse dan Serializer dan mereturn disesuaikan data deliver yang diminta. untuk membuat routing, menggunakan urls.py untuk membuka dan menampilkan data yang diminta dan menyesuaikan dengan urls yang kita minta. deployment dilakukan dengan hanya push ke github dan mengaktifkan heroku. postman hanya memasukan 3 urls localdata yang ada dan send request ke postman. 
+1. Pengguna mengisi form pada halaman
+2. Pengguna menekan tombol submit
+3. Data yang diinputkan akan dikirimkan ke server
+4. Server akan memproses data yang dikirimkan
+5. Data yang sudah diproses akan disimpan pada database
+6. Data yang sudah disimpan pada database akan ditampilkan pada halaman
+
+## bagaimana cara kamu mengimplementasikan checklist di atas.
+
+1. Membuat model
+2. Membuat view
+3. Membuat template
+4. Membuat url
+5. Membuat form
+6. menyambungkan semua bagian
+
