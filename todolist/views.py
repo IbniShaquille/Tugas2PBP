@@ -16,29 +16,14 @@ from todolist.forms import CreateTaskForm
 # Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
-    data_tugas = task.objects.all()
+    data_tugas = task.objects.filter(user = request.user)
     context = {
         'task': data_tugas,
         'nama': 'Ibni Shaquille Syauqi Ibrahim',
-        'studentId': '2106706735'
+        'studentId': '2106706735',
+        'last_login' : request.COOKIES.get('last_login')
     }
     return render(request, "todolist.html", context)
-
-def show_xml(request):
-    data = task.objects.all()
-    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
-
-def show_json(request):
-    data = task.objects.all()
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-
-def show_xml_by_id(request, id):
-    data = task.objects.filter(pk=id)
-    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
-
-def show_json_by_id(request, id):
-    data = task.objects.filter(pk=id)
-    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
 def register(request):
     form = UserCreationForm()
@@ -74,6 +59,7 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return redirect('todolist:login')
 
+@login_required(login_url='/todolist/login/')
 def create(request):
     createForm = CreateTaskForm(request.POST or None)
     if request.method == 'POST':
