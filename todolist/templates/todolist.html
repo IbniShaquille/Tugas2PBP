@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h5>Nama: </h5>
+<p>{{nama}}</p>
+
+<h5>studentId: </h5>
+<p>{{studentId}}</p>
+<table class="table">
+	<thead class="thead-dark">
+	  <tr>
+		<th scope="col">#</th>
+		<th scope="col">date</th>
+		<th scope="col">title</th>
+		<th scope="col">description</th>
+	  </tr>
+	</thead>
+	<tbody>
+	{% for tugas in task %}
+	  <tr>
+		<th scope="row">{{forloop.counter}}</th>
+		<td>{{tugas.date}}</td>
+		<td>{{tugas.title}}</td>
+		<td>{{tugas.description}}</td>
+	  </tr>
+	{% endfor %}
+	</tbody>
+  </table>
+<h5>Sesi terakhir login: {{ last_login }}</h5>
+<button><a href="{% url 'todolist:create' %}">create</a></button>
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
+{% endblock content %}

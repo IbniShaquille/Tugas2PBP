@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'example_app',
     'katalog',
     'myWatchList',
-    
+    'todolist',    
 ]
 
 MIDDLEWARE = [
