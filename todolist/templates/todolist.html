@@ -3,26 +3,21 @@
 {% block content %}
 <h5>username</h5>
 <p>{{request.user}}</p>
-<table class="table">
-	<thead class="thead-dark">
-	  <tr>
-		<th scope="col">#</th>
-		<th scope="col">date</th>
-		<th scope="col">title</th>
-		<th scope="col">description</th>
-	  </tr>
-	</thead>
-	<tbody>
-	{% for tugas in task %}
-	  <tr>
-		<th scope="row">{{forloop.counter}}</th>
-		<td>{{tugas.date}}</td>
-		<td>{{tugas.title}}</td>
-		<td>{{tugas.description}}</td>
-	  </tr>
-	{% endfor %}
-	</tbody>
-  </table>
+
+<div class="card-group">
+	<div class="row row-cols-1 row-cols-md-3 g-4">
+		{% for tugas in task %}
+			<div class="card border-info mb-5" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">{{tugas.title}}</h5>
+					<p class="card-text">{{tugas.date}}</p>
+					<p class="card-text">{{tugas.description}}</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
 <h5>Sesi terakhir login: {{ last_login }}</h5>
 <button><a href="{% url 'todolist:create' %}">create</a></button>
 <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
