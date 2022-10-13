@@ -3,7 +3,7 @@
 {% block content %}
 <h5>username</h5>
 <p>{{request.user}}</p>
-
+<!-- 
 <div class="card-group">
 	<div class="row row-cols-1 row-cols-md-3 g-4">
 		{% for tugas in task %}
@@ -17,9 +17,111 @@
 		{% endfor %}
 	</div>
 </div>
+-->
+<!-- get data di class cardDataTugas -->
+<div class="cardDataTugas">
 
+</div>
 <h5>Sesi terakhir login: {{ last_login }}</h5>
 <button><a href="{% url 'todolist:create' %}">create</a></button>
 <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+<!-- Button trigger modal -->
+<button type="button" id="addBtn" class="btn btn-primary float-right" data-toggle="modal" data-target="#modalSaya">
+    add task
+</button>
+<br><br><br><br>
 
+<!-- Contoh Modal -->
+<!-- get from https://www.malasngoding.com/modal-bootstrap-4/ -->
+<div class="modal fade" id="modalSaya" tabindex="-1" role="dialog" aria-labelledby="modalSayaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    	<div class="modal-content">
+        	<div class="modal-header">
+          		<h5 class="modal-title" id="modalSayaLabel">Add Task Form</h5>
+          		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            		<span aria-hidden="true">&times;</span>
+          		</button>
+        	</div>
+        	<div class="modal-body">
+				<form action="" method="POST">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="title">Title</label>
+						<input type="text" class="form-control" id="title" name="title" placeholder="Title">
+					</div>
+					<div class="form-group">
+						<label for="description">Description</label>
+						<textarea class="form-control" id="description" name="description" rows="3" placeholder="Description"></textarea>
+					</div>
+				</form>
+        	</div>
+        	<div class="modal-footer">
+          		<button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+          		<button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
+        	</div>
+      	</div>
+    </div>
+</div>
+
+
+<!-- jquery untuk get data untuk class cardDataTugas -->
+<script>
+	$(document).ready(function(){
+		$.get("{% url 'todolist:show_json' %}", function(data){
+			let data_tugas = '<div class="card-group">'
+			data_tugas += '<div class="row row-cols-1 row-cols-md-3 g-4">'
+			for (let i = 0; i < data.length; i++) {
+				data_tugas += '<div class="card border-info mb-5" style="width: 18rem;">'
+				data_tugas += '<div class="card-body">'
+				data_tugas += '<h5 class="card-title">' + data[i].fields.title + '</h5>'
+				data_tugas += '<p class="card-text">' + data[i].fields.date + '</p>'
+				data_tugas += '<p class="card-text">' + data[i].fields.description + '</p>'
+				data_tugas += '</div>'
+				data_tugas += '</div>'
+			}
+			data_tugas += '</div>'
+			data_tugas += '</div>'
+			$(".cardDataTugas").html(data_tugas);
+		});
+	});
+</script>
+
+
+<!-- jquery untuk submit form -->
+<script>
+	$(document).ready(function(){
+		$('#submitBtn').click(function(){
+			let title = $('#title').val();
+			let description = $('#description').val();
+			let csrf_token = $('input[name="csrfmiddlewaretoken"]').val();
+			console.log('tes');
+			$.post("{% url 'todolist:add' %}", {
+				title: title,
+				description: description,
+				csrfmiddlewaretoken: csrf_token
+			},
+			function(data){
+				$('.cardDataTugas').empty();
+				$('#modalSaya').modal('hide');
+				$.get("{% url 'todolist:show_json' %}", function(data){
+					let data_tugas = '<div class="card-group">'
+					data_tugas += '<div class="row row-cols-1 row-cols-md-3 g-4">'
+					for (let i = 0; i < data.length; i++) {
+						data_tugas += '<div class="card border-info mb-5" style="width: 18rem;">'
+						data_tugas += '<div class="card-body">'
+						data_tugas += '<h5 class="card-title">' + data[i].fields.title + '</h5>'
+						data_tugas += '<p class="card-text">' + data[i].fields.date + '</p>'
+						data_tugas += '<p class="card-text">' + data[i].fields.description + '</p>'
+						data_tugas += '</div>'
+						data_tugas += '</div>'
+					}
+					data_tugas += '</div>'
+					data_tugas += '</div>'
+					$(".cardDataTugas").html(data_tugas);
+				});
+			});
+		});
+	})
+</script>
 {% endblock content %}
+
