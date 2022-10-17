@@ -94,7 +94,7 @@
 			let title = $('#title').val();
 			let description = $('#description').val();
 			let csrf_token = $('input[name="csrfmiddlewaretoken"]').val();
-			console.log('tes');
+			$('#modalSaya').modal('hide');
 			$.post("{% url 'todolist:add' %}", {
 				title: title,
 				description: description,
@@ -102,7 +102,6 @@
 			},
 			function(data){
 				$('.cardDataTugas').empty();
-				$('#modalSaya').modal('hide');
 				$.get("{% url 'todolist:show_json' %}", function(data){
 					let data_tugas = '<div class="card-group">'
 					data_tugas += '<div class="row row-cols-1 row-cols-md-3 g-4">'
